@@ -1,0 +1,30 @@
+.header-container {
+  display: flex;
+  height: 125px;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.avatar {
+  width: 97px;
+  height: 100%;
+  background: #EDF5FF 0% 0% no-repeat padding-box;
+}
+
+.contact {
+  width: 239px;
+  height: 100%;
+  background: #EDF5FF 0% 0% no-repeat padding-box;
+}
+
+.activity {
+  width: 559px;
+  height: 100%;
+  /* background: #EDF5FF 0% 0% no-repeat padding-box; */
+}
+
+.sms-status {
+  width: 225px;
+  height: 100%;
+  background: #EDFFED 0% 0% no-repeat padding-box;
+}

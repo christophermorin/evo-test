@@ -1,0 +1,35 @@
+.titleBar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.star {
+  height: 25px;
+  width: 28px;
+  border: 1px solid red;
+}
+
+.name {
+  font: normal normal 600 25px/34px Open Sans;
+}
+
+.namebox {
+  display: flex;
+  gap: 17px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  background: #404040 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font: normal normal normal 18px/21px Arial;
+  color: #FCFEFF;
+}

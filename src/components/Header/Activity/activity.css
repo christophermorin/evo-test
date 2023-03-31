@@ -1,0 +1,43 @@
+.titleBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  font: normal normal normal 12px/17px Open Sans;
+  background: #EDF5FF 0% 0% no-repeat padding-box;
+
+}
+
+.boxes-container {
+  display: flex;
+  gap: 2px;
+}
+
+.boxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  width: 185px;
+  height: 95px;
+  background: #EDF5FF 0% 0% no-repeat padding-box;
+}
+
+.boxes-count {
+  height: 68px;
+  font: normal normal 600 50px/68px Open Sans;
+}
+
+.boxes-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1) 0% 0% no-repeat padding-box;
+}
+
+.boxes-title span {
+  font: normal normal 600 10px/14px Open Sans;
+  color: #000;
+}
