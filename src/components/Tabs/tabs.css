@@ -1,5 +1,23 @@
 .tabs-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2px;
   height: 81px;
   background: #F2F2F2 0% 0% no-repeat padding-box;
   margin-top: 7px;
+}
+
+.tabs-grid {
+  display: grid;
+
+}
+
+.tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 165px;
+  height: 40px;
+  background: #D2D2D2 0% 0% no-repeat padding-box;
 }

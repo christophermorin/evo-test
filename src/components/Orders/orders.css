@@ -1,5 +1,21 @@
 .orders-container {
   height: 206px;
-  background: red 0% 0% no-repeat padding-box;
   margin-top: 2px;
+}
+
+.recent-orders {
+  height: 41px;
+  background: #7D869A 0% 0% no-repeat padding-box;
+}
+
+.labels {
+  height: 25px;
+  border-bottom: 1px solid grey;
+}
+
+.order-row {
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr 2fr 2fr;
+  height: 70px;
+  border-bottom: 1px solid grey;
 }
