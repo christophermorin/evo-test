@@ -4,18 +4,59 @@
 }
 
 .recent-orders {
+  display: flex;
+  position: relative;
   height: 41px;
   background: #7D869A 0% 0% no-repeat padding-box;
 }
 
 .labels {
+  display: grid;
+  grid-template-columns: 145px 456px 230px 191fr;
+  justify-content: center;
+  align-items: center;
   height: 25px;
   border-bottom: 1px solid grey;
+  font: normal normal normal 10px/11px Arial;
+  color: #444444;
+  padding-left: 10px;
 }
 
-.order-row {
+/* .order-row {
   display: grid;
-  grid-template-columns: 1fr 4fr 2fr 2fr 2fr;
+  grid-template-columns: 155px 456px 230px 191fr;
   height: 70px;
   border-bottom: 1px solid grey;
+} */
+
+
+.orders-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 10px;
+  position: absolute;
+  top: 9px;
+
+}
+
+.sent-error-button {
+  width: 67px;
+  height: 23px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 11px;
+  font: normal normal normal 10px/11px Arial;
+  text-transform: uppercase;
+  color: #3A3A3A;
+}
+
+.orders-header {
+  display: flex;
+  flex-grow: 2;
+  justify-content: center;
+  align-items: center;
+  font: normal normal 600 16px/22px Open Sans;
+  text-transform: uppercase;
+  color: #ffffff;
 }

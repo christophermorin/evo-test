@@ -6,15 +6,50 @@
 }
 
 .avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 97px;
   height: 100%;
   background: #EDF5FF 0% 0% no-repeat padding-box;
 }
 
+.avatar i {
+  color: white;
+}
+
 .contact {
+  display: flex;
   width: 239px;
   height: 100%;
   background: #EDF5FF 0% 0% no-repeat padding-box;
+  padding-left: 12px;
+}
+
+.contact-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: inherit;
+  width: 14px;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0 12px 0 0;
+  color: #B0C6D8;
+  list-style: none;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  /* width: 14px; */
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  list-style: none;
+  font: normal normal normal 12px/17px Open Sans;
 }
 
 .activity {

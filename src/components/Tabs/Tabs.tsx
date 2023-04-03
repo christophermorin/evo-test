@@ -3,7 +3,7 @@ import './tabs.css'
 function Tab() {
   return (
     <div className='tab'>
-      Test
+      Orders AAA
     </div>
   )
 }

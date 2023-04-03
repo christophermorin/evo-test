@@ -4,8 +4,8 @@ function TitleBar() {
   return (
     <div className="titleBar-container">
       <div className='namebox'>
-        <div className="star"></div>
-        <div className='name'>Joseph Smith</div>
+        <div className="star"><i className="fal fa-star fa-2x"></i></div>
+        <div className='username'>Joseph Smith</div>
       </div>
       <button className='button'>
         New Order

@@ -1,32 +1,42 @@
 import './orders.css'
+import OrderRow from './OrderRow/OrderRow'
 
-const orderCount = [1, 2, 3, 4]
 
-const displayOrders = orderCount.map((order, i) => {
-  console.log(i)
-  if (i % 2 !== 0) {
+export interface orderRowProps {
+  id: number,
+}
+const orderCount: orderRowProps[] = [
+  { id: 1 },
+  { id: 2 },
+  { id: 3 },
+  { id: 4 },
+  { id: 5 },
+]
 
-    return (
-      <div key={i} className='order-row' style={{ background: "#F2F4F7" }}></div>
-    )
-  } else {
-    return (
-      <div key={i} className='order-row'>
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-      </div>
-    )
-  }
+const displayOrders: JSX.Element[] = orderCount.map((row, i) => {
+  return (
+    <OrderRow key={row.id} count={row.id} />
+  )
 })
 
 function Orders() {
   return (
     <div className='orders-container'>
-      <div className='recent-orders'></div>
-      <div className='labels'></div>
+      <div className='recent-orders'>
+        <div className='orders-buttons'>
+          <button className='sent-error-button'>Sent</button>
+          <button className='sent-error-button'>Errors</button>
+        </div>
+        <div className='orders-header'>
+          Recent Orders
+        </div>
+      </div>
+      <div className='labels'>
+        <div>DATE & TIME</div>
+        <div>SUBJECT</div>
+        <div>COMMUNICATION TYPE</div>
+        <div>ORDER #</div>
+      </div>
       <div>
         {displayOrders}
       </div>

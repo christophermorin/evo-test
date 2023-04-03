@@ -7,12 +7,11 @@
 }
 
 .star {
-  height: 25px;
-  width: 28px;
-  border: 1px solid red;
+  color: #AAAAAA;
+  font: normal normal 300 25px/30px Font Awesome 5 Pro;
 }
 
-.name {
+.username {
   font: normal normal 600 25px/34px Open Sans;
 }
 
