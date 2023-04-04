@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './orders.css'
 import OrderRow from './OrderRow/OrderRow'
 
@@ -19,13 +20,43 @@ const displayOrders: JSX.Element[] = orderCount.map((row, i) => {
   )
 })
 
+interface Catagory {
+  label: string,
+}
+
+const catagory: Catagory[] = [
+  {
+    label: 'Sent'
+  },
+  {
+    label: 'Error'
+  }
+]
+
 function Orders() {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const handleClick = (index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
     <div className='orders-container'>
       <div className='recent-orders'>
         <div className='orders-buttons'>
-          <button className='sent-error-button'>Sent</button>
-          <button className='sent-error-button'>Errors</button>
+          {catagory.map((cat, index) => {
+            return (
+              <button
+                key={index}
+                className={`catagory-button ${index === activeIndex ? 'active-catagory' : 'inactive-catagory'}`}
+                onClick={() => handleClick(index)}
+              >
+                {cat.label}
+              </button>
+            )
+          })}
+          {/* <button className='sent-error-button'>Sent</button>
+          <button className='sent-error-button'>Errors</button> */}
         </div>
         <div className='orders-header'>
           Recent Orders

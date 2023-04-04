@@ -1,8 +1,5 @@
 import './orderRow.css'
 function OrderRow({ count }) {
-
-  console.log(count)
-
   return (
     <div className={`order-row ${count % 2 === 0 ? 'every-second-row' : ''}`}>
       <div className='column-container'>
@@ -20,7 +17,7 @@ function OrderRow({ count }) {
       </div>
       <div className='order-resend'>
         <span className='order-number'>123456</span>
-        <span className='resend-button'>Resend</span>
+        <div className='resend-button'>Resend</div>
       </div>
     </div>
   )

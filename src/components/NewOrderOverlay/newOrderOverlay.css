@@ -1,0 +1,26 @@
+.neworder-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.close-neworder {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: #eeeeee;
+  cursor: pointer;
+}
+
+.spinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font: normal normal normal 32px/43px Open Sans;
+  color: #eeeeee;
+}
