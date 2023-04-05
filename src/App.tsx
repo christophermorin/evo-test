@@ -24,17 +24,24 @@ const Overlay: React.FC<OverlayProps> = ({ children }) => {
 function App() {
   const [showOverlay, setShowOverlay] = useState<boolean>(false)
   const dispatch = useDispatch();
-  const { data, isLoading, error } = useSelector((state) => state.headerData)
+  // const { data, isLoading, error } = useSelector((state) => state.ordersData)
 
-  console.log(data, isLoading, error)
 
   useEffect(() => {
     dispatch(fetchHeaderDataRequest())
+    dispatch(fetchOrdersDataRequest())
   }, [])
 
   const handleOverlay = () => {
     setShowOverlay(!showOverlay)
   }
+
+
+  // passes in the index
+  // grab orders data at that index
+  // pass that data to orders or a new store?
+  // If new store, you can just pull it in to orders row instead of prop drilling down through orders.
+  // }
 
   return (
     <div className="main-container">
@@ -44,8 +51,8 @@ function App() {
         </Overlay>}
       <TitleBar handleOverlay={handleOverlay} />
       <Header />
-      <Tabs />
-      <div className='divider'></div>
+      {/* <Tabs selectOrder={selectOrder} /> */}
+      {/* <div className='divider'></div> */}
       <Orders />
     </div>
   )

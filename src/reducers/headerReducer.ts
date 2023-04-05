@@ -9,7 +9,7 @@ interface HeaderDataState {
 
 const initialState: HeaderDataState = {
   data: null,
-  isLoading: false,
+  isLoading: true,
   error: null
 }
 

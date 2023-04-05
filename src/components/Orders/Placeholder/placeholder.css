@@ -1,0 +1,9 @@
+.placeholder-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background: #FAFAFA;
+  font: normal normal normal 21px/28px Open Sans;
+  color: #CCCCCC;
+}

@@ -52,3 +52,16 @@ export interface OrdersObject {
   orders_C: []
 }
 
+export interface sentObject {
+
+  id: number,
+  order_id: number,
+  sent_dt: string,
+  sent_tm: string,
+  subject: {
+    title: string,
+    email: string,
+  },
+  type: string
+}
+

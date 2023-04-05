@@ -1,26 +1,69 @@
 import './orderRow.css'
-function OrderRow({ count }) {
+import { sentObject } from '../../../types/types'
+
+
+interface Props {
+  key: number,
+  orderData: sentObject
+}
+
+interface DateOptions {
+  day: "numeric",
+  weekday: "short",
+  month: "short",
+}
+
+interface TimeOptions {
+  minute: "numeric",
+  hour: "numeric",
+  hour12: boolean,
+}
+
+function formatDateString(dateString: string): string {
+  const options: DateOptions = {
+    weekday: "short",
+    month: "short",
+    day: "numeric"
+  };
+  const date = new Date(dateString)
+  const formattedDate = date.toLocaleDateString("en-US", options);
+  return formattedDate
+}
+
+function formatTimeString(timeString: string): string {
+  const [hours, minutes] = timeString.split(":");
+  const date = new Date();
+  date.setHours(parseInt(hours), parseInt(minutes));
+
+  const options: TimeOptions = { hour: "numeric", minute: "numeric", hour12: true };
+  const formattedTime = date.toLocaleTimeString("en-US", options);
+  return formattedTime;
+}
+
+const OrderRow: React.FC<Props> = ({ orderData }) => {
   return (
-    <div className={`order-row ${count % 2 === 0 ? 'every-second-row' : ''}`}>
+    <div className={`order-row`}>
       <div className='column-container'>
-        <div className='date'>Sat, apr 14</div>
-        <div className='time'>4:30pm</div>
+        <div className='date'>{formatDateString(orderData.sent_dt)}</div>
+        <div className='time'>{formatTimeString(orderData.sent_tm)}</div>
       </div>
       <div className='column-container'>
-        <div className='subject'>Thank you Bonus</div>
-        <div className='order-contact'>mail@mail.com</div>
+        <div className='subject'>{orderData.subject.title}</div>
+        <div className='order-contact'>{orderData.subject.email}</div>
       </div>
       <div className='column-container'>
         <div className='communication-type'>
-          Promotion Email
+          {orderData.type}
         </div>
       </div>
       <div className='order-resend'>
-        <span className='order-number'>123456</span>
+        <span className='order-number'>{orderData.order_id}</span>
         <div className='resend-button'>Resend</div>
       </div>
     </div>
   )
 }
+
+// ${ count % 2 === 0 ? 'every-second-row' : '' }
 
 export default OrderRow
