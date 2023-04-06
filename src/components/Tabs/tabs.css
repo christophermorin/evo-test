@@ -25,6 +25,11 @@
   cursor: pointer;
 }
 
+.tab:hover {
+  background: #4D4D4D;
+  color: #ffffff;
+}
+
 .active {
   background: #3A3A3A;
   color: #ffffff;

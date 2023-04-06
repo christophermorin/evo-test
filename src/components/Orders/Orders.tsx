@@ -62,7 +62,7 @@ function Orders() {
   };
 
   // Rename this
-  const handleClick = (index: number, label: string) => {
+  const handleCatagory = (index: number, label: string) => {
     setActiveIndex(index);
     if (label === 'Errors') {
       setErrorLoader(<Loading key='loading' />)
@@ -100,7 +100,7 @@ function Orders() {
                   <button
                     key={index}
                     className={`catagory-button ${index === activeIndex ? 'active-catagory' : 'inactive-catagory'}`}
-                    onClick={() => handleClick(index, cata.label)}
+                    onClick={() => handleCatagory(index, cata.label)}
                   >
                     <span>{cata.label}</span>
                   </button>

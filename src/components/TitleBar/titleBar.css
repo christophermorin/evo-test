@@ -28,6 +28,15 @@
   margin-bottom: 16px;
   background: #404040;
   border-radius: 4px;
+  border: none;
   font: normal normal normal 18px/21px Arial;
   color: #FCFEFF;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out
+}
+
+.titleBar-button:hover {
+  background: #7D869A;
+  box-shadow: 0px 0px 4px #404040;
+  border: none;
 }

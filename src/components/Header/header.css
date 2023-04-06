@@ -13,7 +13,7 @@
   align-items: center;
   width: 97px;
   gap: 13px;
-  background: #EDF5FF 0% 0% no-repeat padding-box;
+  background: #EDF5FF;
 }
 
 .header-avatar i {
@@ -32,7 +32,7 @@
   width: 239px;
   height: 100%;
   padding-left: 12px;
-  background: #EDF5FF 0% 0% no-repeat padding-box;
+  background: #EDF5FF;
 }
 
 .header-contact-icons {
@@ -63,10 +63,12 @@
 .header-activity {
   width: 559px;
   height: 100%;
+  color: #333333;
 }
 
 .header-sms-status {
   width: 225px;
   height: 100%;
   background: #EDFFED 0% 0% no-repeat padding-box;
+  color: #333333;
 }
