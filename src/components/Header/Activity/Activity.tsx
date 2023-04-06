@@ -11,7 +11,7 @@ const Activity: React.FC = () => {
         <span className='act-title'>90-day Communication Activity</span>
       </div>
       <div className="act-boxes-container">
-        {isLoading &&
+        {isLoading || error &&
           <>
             <div className='act-boxes'></div>
             <div className='act-boxes'></div>

@@ -20,7 +20,7 @@ const catagory: Catagory[] = [
 
 function Orders() {
   const [activeIndex, setActiveIndex] = useState<number>(0)
-  const [hasOrders, setHasOrders] = useState<boolean>(true)
+  const [hasOrders, setHasOrders] = useState<boolean>(false)
   const [currentOrders, setCurrentOrders] = useState<sentObject[]>([])
   const [errorLoader, setErrorLoader] = useState<ReactElement | null>()
 
@@ -34,6 +34,7 @@ function Orders() {
       for (let order in data) {
         if (data[order as keyof OrdersObject].sent) {
           setCurrentOrders(data[order as keyof OrdersObject].sent)
+          setHasOrders(true)
         }
       }
     }
