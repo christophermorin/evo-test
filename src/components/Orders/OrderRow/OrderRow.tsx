@@ -44,21 +44,21 @@ const OrderRow: React.FC<Props> = ({ orderData }) => {
   return (
     <div className={`order-row`}>
       <div className='column-container'>
-        <div className='date'>{formatDateString(orderData.sent_dt)}</div>
-        <div className='time'>{formatTimeString(orderData.sent_tm)}</div>
+        <div className='date text-overflow'>{formatDateString(orderData.sent_dt)}</div>
+        <div className='time text-overflow'>{formatTimeString(orderData.sent_tm)}</div>
       </div>
       <div className='column-container'>
-        <div className='subject'>{orderData.subject.title}</div>
-        <div className='order-contact'>{orderData.subject.email}</div>
+        <div className='subject text-overflow'>{orderData.subject.title}</div>
+        <div className='order-contact text-overflow'>{orderData.subject.email}</div>
       </div>
       <div className='column-container'>
-        <div className='communication-type'>
+        <div className='communication-type text-overflow'>
           {orderData.type}
         </div>
       </div>
       <div className='order-resend'>
-        <span className='order-number'>{orderData.order_id}</span>
-        <div className='resend-button'>Resend</div>
+        <span className='order-number text-overflow'>{orderData.order_id}</span>
+        <div className='resend-button text-overflow'>Resend</div>
       </div>
     </div>
   )

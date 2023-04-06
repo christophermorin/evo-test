@@ -1,6 +1,8 @@
+import { ReactNode } from 'react'
 import './header.css'
 import './Activity/activity.css'
 import Activity from './Activity/Activity'
+import HeaderOverlay from './HeaderOverlay/HeaderOverlay'
 import Sms from './Sms/Sms'
 import { useSelector } from 'react-redux'
 
@@ -12,14 +14,14 @@ function getAge(birthDate: string): number {
   return currentAge
 }
 
+
 const Header: React.FC = () => {
   const { data, isLoading, error } = useSelector((state) => state.headerData)
 
-
   return (
     <div className="header-container">
+      {isLoading && <HeaderOverlay />}
       <div className='avatar'>
-        {isLoading && <div></div>}
         {!isLoading && !error &&
           <>
             <i className="fal fa-user fa-4x"></i>

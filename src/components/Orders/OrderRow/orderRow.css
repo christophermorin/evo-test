@@ -4,6 +4,7 @@
   height: 70px;
   border-bottom: 1px solid grey;
   padding-left: 10px;
+
 }
 
 .every-second-row {
@@ -16,6 +17,15 @@
   justify-content: center;
   gap: 6px;
   color: #333333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .date {
