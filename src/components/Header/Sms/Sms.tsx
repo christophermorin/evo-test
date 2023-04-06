@@ -1,5 +1,6 @@
 import './sms.css'
 import { useSelector } from 'react-redux'
+import { RootState } from '../../../types/types';
 
 interface Options {
   month: "short" | "long";
@@ -7,17 +8,16 @@ interface Options {
   year: "numeric" | "2-digit";
 }
 
-
-function Sms() {
-  const { data, isLoading, error } = useSelector((state) => state.headerData)
-  let status: string = ""
-  let date: string = ""
-
+const Sms: React.FC = () => {
+  const { data, isLoading, error } = useSelector((state: RootState) => state.headerData)
   const options: Options = {
     month: "short",
     day: "numeric",
     year: "numeric"
   }
+
+  let status: string = ""
+  let date: string = ""
 
   if (!isLoading && !error) {
     status = data.carrier_status.status
@@ -27,7 +27,7 @@ function Sms() {
   return (
     <>
       <div className="sms-titleBar">
-        SMS CARRIER STATUS
+        <span className='sms-title'>SMS carrier status</span>
       </div>
       {isLoading &&
         <div></div>
@@ -37,7 +37,7 @@ function Sms() {
           <div className="sms-box">
             <div className="sms-box-count">{status}</div>
             <div className="sms-box-title">
-              <span>{`Since ${new Date(date).toLocaleDateString("en-US", options)}`}</span>
+              <span className='sms-box-type'>{`Since ${new Date(date).toLocaleDateString("en-US", options)}`}</span>
             </div>
           </div>
         </div>

@@ -2,15 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 2px;
   height: 81px;
-  background: #F2F2F2 0% 0% no-repeat padding-box;
   margin-top: 7px;
+  gap: 2px;
+  background: #F2F2F2;
 }
 
 .tabs-grid {
   display: grid;
-
 }
 
 .tab {
@@ -19,7 +18,7 @@
   align-items: center;
   width: 165px;
   height: 40px;
-  background: #D2D2D2 0% 0% no-repeat padding-box;
+  background: #D2D2D2;
   font: normal normal bold 12px/14px Arial;
   text-transform: uppercase;
   color: #3A3A3A;
@@ -27,6 +26,6 @@
 }
 
 .active {
-  background: #3A3A3A 0% 0% no-repeat padding-box;
+  background: #3A3A3A;
   color: #ffffff;
 }

@@ -53,7 +53,6 @@ export interface OrdersObject {
 }
 
 export interface sentObject {
-
   id: number,
   order_id: number,
   sent_dt: string,
@@ -64,4 +63,21 @@ export interface sentObject {
   },
   type: string
 }
+
+export interface RootState {
+  headerData: HeaderDataState,
+  ordersData: OrdersDataState
+}
+
+export type OrdersDataState = {
+  data: OrdersObject;
+  isLoading: boolean;
+  error: string | null;
+};
+
+export type HeaderDataState = {
+  data: HeaderObject;
+  isLoading: boolean;
+  error: string | null;
+};
 

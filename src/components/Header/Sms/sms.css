@@ -3,8 +3,12 @@
   justify-content: center;
   align-items: center;
   height: 30px;
+  background: #EDFFED;
+}
+
+.sms-title {
   font: normal normal normal 12px/17px Open Sans;
-  background: #EDFFED 0% 0% no-repeat padding-box;
+  text-transform: uppercase;
 }
 
 .sms-box {
@@ -13,7 +17,7 @@
   align-items: center;
   gap: 3px;
   height: 95px;
-  background: #EDFFED 0% 0% no-repeat padding-box;
+  background: #EDFFED;
 }
 
 .sms-box-count {
@@ -28,11 +32,12 @@
   align-items: center;
   height: 24px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.1) 0% 0% no-repeat padding-box;
+  background: rgba(0, 0, 0, 0.1);
   font: normal normal 600 10px/14px Open Sans;
 }
 
-.sms-box-title span {
+.sms-box-type {
   font: normal normal 600 10px/14px Open Sans;
+  text-transform: uppercase;
   color: #000;
 }

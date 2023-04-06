@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './tabs.css'
 import { useSelector } from 'react-redux';
+import { RootState } from '../../types/types';
 
 interface Tab {
   id: string
@@ -13,7 +14,7 @@ interface TabsProps {
 
 const Tabs: React.FC<TabsProps> = ({ selectOrder }) => {
   const [activeIndex, setActiveIndex] = useState<number>(2);
-  const { data, isLoading, error } = useSelector((state) => state.ordersData)
+  const { data, isLoading, error } = useSelector((state: RootState) => state.ordersData)
 
   const tabs: Tab[] = []
   if (!isLoading && !error) {
@@ -33,22 +34,21 @@ const Tabs: React.FC<TabsProps> = ({ selectOrder }) => {
 
   return (
     <div className='tabs-container'>
-      {tabs.map((t, index) => {
+      {tabs.map((tab, index) => {
         return (
           <div
-            key={t.id}
+            key={tab.id}
             className={`tab ${index === activeIndex ? 'active' : ''}`}
             onClick={() => {
               handleClick(index)
-              selectOrder(t.id)
+              selectOrder(tab.id)
             }}
           >
-            {t.label}
+            {tab.label}
           </div>
         )
       })}
     </div>
-
   )
 }
 

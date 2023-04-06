@@ -6,29 +6,28 @@
   border-bottom: 1px solid black;
 }
 
-.star {
+.titleBar-star {
   color: #AAAAAA;
-  font: normal normal 300 25px/30px Font Awesome 5 Pro;
 }
 
-.username {
+.titleBar-username {
   font: normal normal 600 25px/34px Open Sans;
 }
 
-.namebox {
+.titleBar-namebox {
   display: flex;
   gap: 17px;
 }
 
-.button {
+.titleBar-button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 200px;
   height: 40px;
-  background: #404040 0% 0% no-repeat padding-box;
-  border-radius: 4px;
   margin-bottom: 16px;
+  background: #404040;
+  border-radius: 4px;
   font: normal normal normal 18px/21px Arial;
   color: #FCFEFF;
 }

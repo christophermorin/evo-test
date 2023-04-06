@@ -1,43 +1,101 @@
 .orders-container {
   height: 206px;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
-.recent-orders {
+.divider {
+  border: 2px solid #4D4D4D;
+}
+
+.orders-topBar {
   display: flex;
   position: relative;
   height: 41px;
   background: #7D869A 0% 0% no-repeat padding-box;
 }
 
-.labels {
-  display: grid;
-  grid-template-columns: 145px 456px 230px 191fr;
-  justify-content: center;
-  align-items: center;
-  height: 25px;
-  border-bottom: 1px solid grey;
-  font: normal normal normal 10px/11px Arial;
-  color: #444444;
-  padding-left: 10px;
-}
-
-/* .order-row {
-  display: grid;
-  grid-template-columns: 155px 456px 230px 191fr;
-  height: 70px;
-  border-bottom: 1px solid grey;
-} */
-
-
 .orders-buttons {
   display: flex;
   align-items: center;
+  top: 9px;
   gap: 5px;
   padding-left: 10px;
   position: absolute;
-  top: 9px;
+}
 
+.orders-recent {
+  display: flex;
+  flex-grow: 2;
+  justify-content: center;
+  align-items: center;
+  font: normal normal 600 16px/22px Open Sans;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.orders-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.orders-headers {
+  display: grid;
+  grid-template-columns: 145px 456px 230px 191fr;
+  justify-items: flex-start;
+  align-items: center;
+  height: 25px;
+  padding: 2px 0 0 10px;
+  border-bottom: 1px solid lightgrey;
+  font: normal normal normal 10px/11px Arial;
+  text-transform: uppercase;
+}
+
+.order-row {
+  display: grid;
+  grid-template-columns: 145px 456px 230px 191px 92px;
+  height: 70px;
+  padding-left: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.alt-bg {
+  background: #F2F4F7;
+}
+
+.order-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  color: #333333;
+}
+
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.font-14-19 {
+  font: normal normal normal 14px/19px Open Sans;
+}
+
+.font-16-22 {
+  font: normal normal normal 16px/22px Open Sans;
+}
+
+.orders-resend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 88px;
+  height: 28px;
+  background: #7D869A;
+  border-radius: 2px;
+  font: normal normal normal 12px/14px Arial;
+  color: #ffffff;
+  text-transform: uppercase;
 }
 
 .catagory-button {
@@ -56,15 +114,5 @@
 
 .inactive-catagory {
   background: transparent;
-  color: #ffffff;
-}
-
-.orders-header {
-  display: flex;
-  flex-grow: 2;
-  justify-content: center;
-  align-items: center;
-  font: normal normal 600 16px/22px Open Sans;
-  text-transform: uppercase;
   color: #ffffff;
 }

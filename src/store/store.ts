@@ -4,8 +4,6 @@ import { headerDataSlice } from '../reducers/headerReducer';
 import { ordersDataSlice } from '../reducers/orderReducer';
 import rootSaga from '../saga';
 
-export type RootState = ReturnType<typeof store.getState>;
-
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({

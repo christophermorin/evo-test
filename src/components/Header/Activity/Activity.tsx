@@ -1,40 +1,41 @@
 import './activity.css'
 import { useSelector } from 'react-redux'
+import { RootState } from '../../../types/types'
 
 const Activity: React.FC = () => {
-  const { data, isLoading, error } = useSelector((state) => state.headerData)
+  const { data, isLoading, error } = useSelector((state: RootState) => state.headerData)
 
   return (
     <>
-      <div className="titleBar">
-        90-DAY COMMUNICATION ACTIVITY
+      <div className="act-titleBar">
+        <span className='act-title'>90-day Communication Activity</span>
       </div>
-      <div className="boxes-container">
+      <div className="act-boxes-container">
         {isLoading &&
           <>
-            <div className='boxes'></div>
-            <div className='boxes'></div>
-            <div className='boxes'></div>
+            <div className='act-boxes'></div>
+            <div className='act-boxes'></div>
+            <div className='act-boxes'></div>
           </>
         }
         {!isLoading && !error &&
           <>
-            <div className="boxes">
-              <div className="boxes-count">{data.activity.sms}</div>
-              <div className="boxes-title">
-                <span>SMS</span>
+            <div className="act-boxes">
+              <div className="act-boxes-count">{data.activity.sms}</div>
+              <div className="act-boxes-title">
+                <span className='act-boxes-type'>SMS</span>
               </div>
             </div>
-            <div className="boxes">
-              <div className="boxes-count">{data.activity.email}</div>
-              <div className="boxes-title">
-                <span>Email</span>
+            <div className="act-boxes">
+              <div className="act-boxes-count">{data.activity.email}</div>
+              <div className="act-boxes-title">
+                <span className='act-boxes-type'>Email</span>
               </div>
             </div>
-            <div className="boxes">
-              <div className="boxes-count">{data.activity.orders}</div>
-              <div className="boxes-title">
-                <span>Orders</span>
+            <div className="act-boxes">
+              <div className="act-boxes-count">{data.activity.orders}</div>
+              <div className="act-boxes-title">
+                <span className='act-boxes-type'>Orders</span>
               </div>
             </div>
           </>

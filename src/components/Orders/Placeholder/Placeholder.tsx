@@ -3,7 +3,7 @@ import './placeholder.css'
 const Placeholder: React.FC = () => {
   return (
     <div className='placeholder-container'>
-      <p>No Items</p>
+      <span>No Items</span>
     </div>
   )
 }

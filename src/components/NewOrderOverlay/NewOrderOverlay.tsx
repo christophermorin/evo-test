@@ -1,11 +1,9 @@
 import './newOrderOverlay.css'
 import ClipLoader from "react-spinners/ClipLoader";
 
-
 interface Props {
   handleOverlay: () => void
 }
-
 
 const NewOrderOverlay: React.FC<Props> = ({ handleOverlay }) => {
   return (
@@ -18,7 +16,7 @@ const NewOrderOverlay: React.FC<Props> = ({ handleOverlay }) => {
           speedMultiplier={1}
           aria-label="Loading Spinner"
         />
-        <span>Processing</span>
+        <span className='processing'>Processing</span>
       </div>
     </div>
   )
