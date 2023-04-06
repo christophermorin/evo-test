@@ -29,10 +29,11 @@
 
 .header-contact {
   display: flex;
-  width: 239px;
+  width: 227px;
   height: 100%;
   padding-left: 12px;
   background: #EDF5FF;
+  gap: 12px;
 }
 
 .header-contact-icons {
@@ -40,20 +41,23 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: inherit;
   width: 14px;
   margin: 0;
-  padding: 0 12px 0 0;
+  padding: 0;
   color: #B0C6D8;
   list-style: none;
+}
+
+.header-contact-icons i {
+  font: normal normal 300 14px/17px Font Awesome 5 Pro;
 }
 
 .header-contact-details {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: inherit;
   margin: 0;
+  /* gap: 5px; */
   padding: 0;
   list-style: none;
   color: #333333;
