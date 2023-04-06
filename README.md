@@ -6,4 +6,4 @@
 
 * Twitter - [@Longhumans](https://twitter.com/longhumans)
 * LinkedIn - [Chris Morin](https://www.linkedin.com/in/chrisjmorin/)
-* Email [Chris Morin](morin.james.c@gmail.com)
+* Email - [Chris Morin](mailto:morin.james.c@gmail.com)
