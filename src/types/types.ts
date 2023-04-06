@@ -20,8 +20,8 @@ export interface HeaderObject {
 }
 
 export interface OrdersObject {
-  orders_A: [],
-  orders_AA: [],
+  orders_A: never[],
+  orders_AA: never[],
   orders_AAA: {
     sent: [
       {
@@ -48,8 +48,8 @@ export interface OrdersObject {
       }
     ]
   },
-  orders_B: [],
-  orders_C: []
+  orders_B: never[],
+  orders_C: never[]
 }
 
 export interface sentObject {

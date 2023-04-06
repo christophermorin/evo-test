@@ -4,7 +4,7 @@ import Tabs from '../Tabs/Tabs'
 import Loading from './Loading/Loading'
 import Placeholder from './Placeholder/Placeholder'
 import { useSelector, useDispatch } from 'react-redux'
-import { sentObject } from '../../types/types'
+import { OrdersObject, sentObject } from '../../types/types'
 import { fetchOrdersDataRequest } from '../../reducers/orderReducer'
 import { formatDateString, formatTimeString } from '../utils/formatDateTime'
 import { RootState } from '../../types/types'
@@ -32,9 +32,8 @@ function Orders() {
   useEffect(() => {
     if (data && !error) {
       for (let order in data) {
-        if (data[order].sent) {
-          setCurrentOrders(data[order].sent)
-          break;
+        if (data[order as keyof OrdersObject].sent) {
+          setCurrentOrders(data[order as keyof OrdersObject].sent)
         }
       }
     }
@@ -61,7 +60,6 @@ function Orders() {
     }
   };
 
-  // Rename this
   const handleCatagory = (index: number, label: string) => {
     setActiveIndex(index);
     if (label === 'Errors') {
