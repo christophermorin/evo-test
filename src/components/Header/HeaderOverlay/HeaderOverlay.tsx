@@ -1,10 +1,6 @@
 import './headerOverlay.css'
 import { BeatLoader } from 'react-spinners'
 
-
-
-
-
 const HeaderOverlay: React.FC = () => {
   return (
     <div className="header-overlay">

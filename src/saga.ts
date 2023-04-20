@@ -10,6 +10,7 @@ function* fetchHeaderDataSagaWorker() {
     const response: HeaderObject = yield call(fetchHeaderData); // Type safety for API response
     yield put(fetchHeaderDataSuccess(response)); // Dispatch success action with response data
   } catch (error) {
+    console.log(error.message)
     yield put(fetchHeaderDataFailure(error.message)); // Dispatch failure action with error message
   }
 }
