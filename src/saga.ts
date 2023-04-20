@@ -4,13 +4,11 @@ import { fetchOrdersDataSuccess, fetchOrdersDataFailure, fetchOrdersDataRequest 
 import { fetchHeaderData, fetchOrdersData } from './services/fetchData';
 import { HeaderObject, OrdersObject } from './types/types';
 
-// Define a helper function to call the API and handle errors
 function* fetchHeaderDataSagaWorker() {
   try {
     const response: HeaderObject = yield call(fetchHeaderData); // Type safety for API response
     yield put(fetchHeaderDataSuccess(response)); // Dispatch success action with response data
   } catch (error) {
-    console.log(error.message)
     yield put(fetchHeaderDataFailure(error.message)); // Dispatch failure action with error message
   }
 }
@@ -31,7 +29,6 @@ function* fetchHeaderDataSagaWatcher() {
 
 function* fetchOrdersDataSagaWatcher() {
   yield takeLatest(fetchOrdersDataRequest.type, fetchOrdersDataSagaWorker);
-
 }
 
 export default function* rootSaga() {
