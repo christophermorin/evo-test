@@ -1,4 +1,4 @@
-import { call, put, all, takeLatest } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import { fetchHeaderDataSuccess, fetchHeaderDataFailure, fetchHeaderDataRequest } from './reducers/headerReducer'
 import { fetchOrdersDataSuccess, fetchOrdersDataFailure, fetchOrdersDataRequest } from './reducers/orderReducer';
 import { fetchHeaderData, fetchOrdersData } from './services/fetchData';
@@ -6,36 +6,27 @@ import { HeaderObject, OrdersObject } from './types/types';
 
 function* fetchHeaderDataSagaWorker() {
   try {
-    const response: HeaderObject = yield call(fetchHeaderData); // Type safety for API response
-    yield put(fetchHeaderDataSuccess(response)); // Dispatch success action with response data
+    yield put(fetchHeaderDataRequest())
+    const response: HeaderObject = yield call(fetchHeaderData);
+    yield put(fetchHeaderDataSuccess(response));
   } catch (error) {
-    yield put(fetchHeaderDataFailure(error.message)); // Dispatch failure action with error message
+    yield put(fetchHeaderDataFailure(error.message));
   }
 }
 
 function* fetchOrdersDataSagaWorker() {
   try {
-    const response: OrdersObject = yield call(fetchOrdersData); // Type safety for API response
-    yield put(fetchOrdersDataSuccess(response)); // Dispatch success action with response data
+    yield put(fetchOrdersDataRequest())
+    const response: OrdersObject = yield call(fetchOrdersData);
+    yield put(fetchOrdersDataSuccess(response));
   } catch (error) {
-    yield put(fetchOrdersDataFailure(error.message)); // Dispatch failure action with error message
+    yield put(fetchOrdersDataFailure(error.message));
   }
 }
 
-// Define the Saga watch function to listen for action and trigger worker
-function* fetchHeaderDataSagaWatcher() {
-  yield takeLatest(fetchHeaderDataRequest.type, fetchHeaderDataSagaWorker);
-}
-
-function* fetchOrdersDataSagaWatcher() {
-  yield takeLatest(fetchOrdersDataRequest.type, fetchOrdersDataSagaWorker);
-}
-
 export default function* rootSaga() {
-  yield all([
-    fetchHeaderDataSagaWatcher(),
-    fetchOrdersDataSagaWatcher(),
-  ]);
+  yield takeEvery("FECTH_HEADER_DATA", fetchHeaderDataSagaWorker)
+  yield takeEvery("FECTH_ORDERS_DATA", fetchOrdersDataSagaWorker)
 }
 
 

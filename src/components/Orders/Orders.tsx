@@ -5,9 +5,9 @@ import Loading from './Loading/Loading'
 import Placeholder from './Placeholder/Placeholder'
 import { useSelector, useDispatch } from 'react-redux'
 import { OrdersObject, sentObject } from '../../types/types'
-import { fetchOrdersDataRequest } from '../../reducers/orderReducer'
 import { formatDateString, formatTimeString } from '../utils/formatDateTime'
 import { RootState } from '../../types/types'
+import { fetchOrdersAction } from '../../actions/actions'
 
 interface Catagory {
   label: string,
@@ -23,7 +23,6 @@ function Orders() {
   const [hasOrders, setHasOrders] = useState<boolean>(false)
   const [currentOrders, setCurrentOrders] = useState<sentObject[]>([])
   const [errorLoader, setErrorLoader] = useState<ReactElement | null>()
-
   const [sortDirection, setSortDirection] = useState('asc');
 
   const { data, isLoading, error } = useSelector((state: RootState) => state.ordersData)
@@ -32,9 +31,12 @@ function Orders() {
   useEffect(() => {
     if (data && !error) {
       for (let order in data) {
-        if (data[order as keyof OrdersObject].sent) {
-          setCurrentOrders(data[order as keyof OrdersObject].sent)
-          setHasOrders(true)
+        if (data[order as keyof OrdersObject].hasOwnProperty("sent")) {
+          const orderData = data[order as keyof OrdersObject];
+          if (typeof orderData !== "undefined" && "sent" in orderData) {
+            setCurrentOrders(orderData.sent);
+            setHasOrders(true);
+          }
         }
       }
     }
@@ -69,17 +71,21 @@ function Orders() {
         setErrorLoader(< Placeholder key={'placeholder'} />)
       }, 2000)
     } else {
-      dispatch(fetchOrdersDataRequest())
+      dispatch(fetchOrdersAction())
       setErrorLoader(null)
     }
   };
 
-  const selectOrder = (id: string) => {
+  const selectOrder = (order: string) => {
     if (data && !error) {
-      if (data[id].sent) {
-        setHasOrders(true)
-        setCurrentOrders(data[id].sent)
-      } else {
+      if (data[order as keyof OrdersObject].hasOwnProperty("sent")) {
+        const orderData = data[order as keyof OrdersObject];
+        if (typeof orderData !== "undefined" && "sent" in orderData) {
+          setCurrentOrders(orderData.sent);
+          setHasOrders(true);
+        }
+      }
+      else {
         setHasOrders(false)
         setCurrentOrders([])
       }

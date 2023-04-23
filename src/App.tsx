@@ -5,8 +5,7 @@ import TitleBar from './components/TitleBar/TitleBar'
 import Header from './components/Header/Header'
 import Orders from './components/Orders/Orders'
 import NewOrderOverlay from './components/NewOrderOverlay/NewOrderOverlay'
-import { fetchHeaderDataRequest } from './reducers/headerReducer'
-import { fetchOrdersDataRequest } from './reducers/orderReducer'
+import { fetchHeaderAction, fetchOrdersAction } from './actions/actions'
 
 interface OverlayProps {
   children: ReactNode
@@ -24,8 +23,8 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchHeaderDataRequest())
-    dispatch(fetchOrdersDataRequest())
+    dispatch(fetchHeaderAction())
+    dispatch(fetchOrdersAction())
   }, [])
 
   const handleOverlay = () => {
